@@ -5,6 +5,28 @@
 ## Описание проекта
 Проект представляет собой адаптивную версию многостраничного HTML/CSS-сайта интернет-магазина, разработанную на основе проекта КР №1 без использования CSS-фреймворков.
 
+## Структура проекта
+
+```text
+kr3-responsive-shop/
+├── css/
+│   ├── style.css          — основные стили
+│   └── responsive.css     — адаптивные стили (Mobile First)
+├── images/                — изображения товаров
+├── js/
+│   └── main.js            — скрипты (модалка, фильтры)
+├── lighthouse/
+│   └── accessibility-report.png — отчет Lighthouse
+├── index.html             — главная
+├── catalog.html           — каталог
+├── product.html           — товар
+├── order.html             — форма заявки
+├── about.html             — о компании
+├── contacts.html          — контакты
+├── README.md
+└── .gitignore
+```
+
 ## Адаптивные решения (ПЗ №12)
 - Создан отдельный файл `css/responsive.css`, подключенный на всех страницах после `style.css`.
 - Применён подход Mobile First (базовые стили для мобильных, расширение через `min-width`).
@@ -30,3 +52,7 @@
 ## Автор
 - ФИО: Кутлунин Константин Русланович
 - Группа: ЭФБО-15-25
+
+## Ссылки
+- **Репозиторий GitHub:** [https://github.com/Kukoru/kr3-responsive-shop](https://github.com/Kukoru/kr3-responsive-shop)
+- **GitHub Pages:** [https://kukoru.github.io/kr3-responsive-shop/](https://kukoru.github.io/kr3-responsive-shop/)
