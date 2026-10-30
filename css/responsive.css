@@ -226,8 +226,20 @@ body { overflow-x: hidden; width: 100%; margin: 0; }
   .order-form {
     grid-template-columns: 1fr 1fr;
   }
-  .order-form__field:nth-child(4), 
+  
+  /* Теперь мы явно указываем, какие поля занимают всю ширину */
+  .order-form__field--full,
+  .order-form__field--checkbox,
   .order-form__actions {
     grid-column: 1 / -1;
   }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-primary) !important;
+  outline-offset: 3px !important;
 }
