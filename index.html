@@ -18,7 +18,7 @@
   <div class="welcome-banner" id="welcome-banner" hidden>
     <div class="welcome-banner__inner">
       <span class="welcome-banner__text" id="welcome-text"></span>
-      <button class="welcome-banner__close" type="button" id="welcome-close" aria-label="Закрыть">×</button>
+      <button class="welcome-banner__close" type="button" id="welcome-close" aria-label="Закрыть">Х</button>
     </div>
   </div>
 
@@ -72,7 +72,7 @@
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: <s class="product-card__price-old">12000 руб.</s> 10000 руб.</p>
           <button class="button button--primary product-card__button" type="button" data-product="Товар 1">Заказать</button>
-          <a class="button button--secondary product-card__button" href="product.html?id=1">Подробнее</a>
+          <a class="button button--secondary product-card__button" href="product.html?id=1" aria-label="Подробнее о Товар 1">Подробнее</a>
         </article>
 
         <article class="product-card">
@@ -84,7 +84,7 @@
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1500 руб.</p>
           <button class="button button--primary product-card__button" type="button" data-product="Товар 2">Заказать</button>
-          <a class="button button--secondary product-card__button" href="product.html?id=2">Подробнее</a>
+          <a class="button button--secondary product-card__button" href="product.html?id=2" aria-label="Подробнее о Товар 2">Подробнее</a>
         </article>
 
         <article class="product-card product-card--featured">
@@ -97,7 +97,7 @@
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
           <button class="button button--primary product-card__button" type="button" data-product="Товар 3">Заказать</button>
-          <a class="button button--secondary product-card__button" href="product.html?id=3">Подробнее</a>
+          <a class="button button--secondary product-card__button" href="product.html?id=3" aria-label="Подробнее о Товар 3">Подробнее</a>
         </article>
 
       </div>
@@ -172,6 +172,12 @@
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
     <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    
+    <!-- Кнопка закрытия теперь вверху и имеет правильный id -->
+    <button class="dialog-close" type="button" id="close-order-dialog" aria-label="Закрыть">
+      ×
+    </button>
+
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
 
@@ -190,7 +196,7 @@
         <input class="order-form__input" id="order-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" required>
       </div>
 
-      <div class="order-form__field">
+      <div class="order-form__field order-form__field--full">
         <label class="order-form__label" for="order-comment">Комментарий</label>
         <textarea class="order-form__textarea" id="order-comment" name="comment" rows="3" placeholder="Дополнительная информация"></textarea>
       </div>
@@ -203,7 +209,7 @@
       </div>
 
       <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <!-- Внизу осталась только кнопка отправки -->
         <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>

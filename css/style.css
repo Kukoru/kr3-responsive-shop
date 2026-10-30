@@ -5,15 +5,15 @@
   /* Своя цветовая схема — тёмно-синий + бирюзовый акцент */
   --color-bg: #ffffff;
   --color-text: #1a2332;
-  --color-muted: #64748b;
+  --color-muted: #475569;
   --color-primary: #0f766e;
   --color-primary-dark: #115e59;
-  --color-accent: #06b6d4;
+  --color-accent: #0e7490;
   --color-border: #e2e8f0;
   --color-surface: #f8fafc;
   --color-surface-accent: #ecfeff;
   --color-danger: #dc2626;
-  --color-success: #16a34a;
+  --color-success: #15803d;
   --color-success-bg: #f0fdf4;
   --color-white: #ffffff;
 
@@ -352,6 +352,8 @@ a:focus-visible {
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
+  max-height: 90vh; /* Окно не будет выше 90% экрана */
+  overflow-y: auto; /* Внутри окна появится свой аккуратный скролл */
 }
 
 .order-dialog::backdrop {
@@ -379,6 +381,10 @@ a:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font: inherit;
+}
+
+.order-form__textarea {
+  resize: vertical; /* Разрешаем тянуть только вниз */
 }
 
 .order-form__input:hover,
@@ -679,7 +685,7 @@ a:focus-visible {
 .review-card__rating {
   margin: 0;
   font-size: 18px;
-  color: #f5b400;
+  color: #b45309;
   letter-spacing: 2px;
 }
 
@@ -892,4 +898,108 @@ a:focus-visible {
 
 .product-detail.is-loaded {
   visibility: visible;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Модальное окно должно быть relative, чтобы кнопка позиционировалась внутри него */
+.order-dialog {
+  position: relative;
+}
+
+/* Стили для крестика в правом верхнем углу */
+.dialog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-muted);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+/* ===================================
+   Модальное окно и его элементы
+   =================================== */
+.order-dialog {
+  position: relative;
+}
+
+/* Кнопка-крестик в правом верхнем углу */
+.dialog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--color-muted);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.dialog-close:hover {
+  color: var(--color-danger); /* При наведении станет красным */
+}
+
+/* Исправление чекбокса (ставим квадратик и текст на одну линию) */
+.order-form__field--checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.order-form__field--checkbox input {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Растягиваем блок с чекбоксом на всю ширину формы */
+.order-form__field--checkbox {
+  grid-column: 1 / -1; /* Заставляет блок занять все колонки сетки */
+  margin-top: var(--space-sm);
+}
+
+/* Выравниваем квадратик и текст по центру */
+.order-form__field--checkbox label {
+  display: flex;
+  align-items: center; /* Квадратик и текст на одной линии */
+  gap: 12px; /* Расстояние между ними */
+  cursor: pointer;
+}
+
+/* Делаем чекбокс чуть крупнее для удобства */
+.order-form__field--checkbox input {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
