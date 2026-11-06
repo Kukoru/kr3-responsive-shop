@@ -218,6 +218,7 @@ if (productDetail) {
     const img = productDetail.querySelector('.product-detail__image img');
     if (img) {
       img.src = product.image;
+      img.srcset = ''; // Очищаем srcset, чтобы браузер взял картинку из src
       img.alt = product.title;
     }
 
