@@ -42,7 +42,13 @@
     <section class="section">
       <div class="product-detail">
         <div class="product-detail__image">
-          <img src="images/product-1.jpg" alt="Товар 1" loading="lazy">
+          <img 
+            src="images/product-1.jpg" 
+            srcset="images/product-1.jpg 480w, images/product-1.jpg 800w" 
+            sizes="(max-width: 768px) 100vw, 50vw" 
+            alt="Товар 1" 
+            loading="lazy"
+          >
         </div>
 
         <div class="product-detail__info">

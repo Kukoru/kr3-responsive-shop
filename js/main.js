@@ -200,7 +200,7 @@ const productsData = {
   3: { title: 'Товар 3', price: 2000, image: 'images/product-3.jpg', category: 'Компьютеры', badge: 'Новинка' },
   4: { title: 'Товар 4', price: 2500, image: 'images/product-4.jpg', category: 'Электроника', badge: null },
   5: { title: 'Товар 5', price: 3000, image: 'images/product-5.jpg', category: 'Аудио', badge: null },
-  6: { title: 'Товар 6', price: 3500, image: 'images/product-6.jpg', category: 'Компьютеры', badge: null },
+  6: { title: 'Товар 6', price: 350, image: 'images/product-6.jpg', category: 'Компьютеры', badge: null },
 };
 
 const productDetail = document.querySelector('.product-detail');
